@@ -103,8 +103,13 @@ with st.expander("Test Gemini API connection"):
 
             st.success(result)
 
-        except Exception:
-            st.error(
-                "Gemini connection failed. Check your API key, "
-                "model availability and API usage limits."
-            )
+       
+        except requests.exceptions.HTTPError as e:
+            status = e.response.status_code if e.response is not None else "Unknown"
+            st.error(f"Gemini API returned HTTP {status}.")
+            if e.response is not None:
+                st.code(e.response.text[:1500])
+
+        except Exception as e:
+            st.error(f"{type(e).__name__}: {e}")
+
