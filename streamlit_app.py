@@ -39,7 +39,7 @@ st.caption(
 # ==========================================
 
 TOP_N_NEWS = 10
-GEMINI_MODEL = "gemini-2.5-flash"
+GEMINI_MODEL = "gemini-3.8-flash"
 
 
 # ==========================================
