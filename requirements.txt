@@ -1,0 +1,8 @@
+(
+echo feedparser
+echo requests
+echo pandas
+echo beautifulsoup4
+echo python-dateutil
+echo lxml
+) > requirements.txt
